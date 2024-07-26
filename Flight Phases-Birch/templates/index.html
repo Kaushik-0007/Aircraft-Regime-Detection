@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aircraft Phase Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            font-family: 'Georgia', serif;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        input[type="text"], select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 250px;
+            margin-left: 10px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aircraft Phase Prediction (Birch) </h1>
+    <form action="/predict" method="post">
+        <label for="alt">Altitude:</label>
+        <input type="text" id="alt" name="alt"><br><br>
+        <label for="spd">Speed:</label>
+        <input type="text" id="spd" name="spd"><br><br>
+        <label for="roc">Rate of Climb:</label>
+        <input type="text" id="roc" name="roc"><br><br>
+        <label for="k">Number of Clusters:</label>
+        <select id="k" name="k">
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select><br><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
